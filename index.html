@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Loan Calculator</title>
+    <style>
+        body, html {
+  height: 100%;
+}
+.bg {
+  /* The image used */
+  background-image: url("business office display background design_943575.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+        #loading, #results { display: none}
+    </style>
+</head>
+
+<body class="bg">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card card-body text-center mt-5">
+                    <h1 class="heading display-5 pb-3">EMI CALCULATOR</h1>
+                     <img src="CMTI_bBI-01.png" alt="Logo" class="rounded mx-auto d-block" style="width:250px;">
+                    <form id="loan-form">
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                
+                                <select class="form-control"  id="laptop">
+                                <option value=" ">--Select Laptop--</option>
+                                <option value="A315-23">Acer A315-23</option>
+                                <option value="Z2-485">Acer One# 14 Z2-485</option>
+                                <option value="V15–15">Lenovo Ryzen 3 V15–15.6</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div  class="form-group">
+                            <div class="input-group mb-3">
+                                
+                                <select class="form-control" id="edglobe">
+                                <option value=" ">--Select Educational Product--</option>
+                                <option value="lgkids">Little Genius Kids</option>
+                                <option value="lgjun">Little Genius Junior(1-4)</option>
+                                <option value="yg5">Young Genius Class 5</option>
+                                <option value="yg6">Young Genius Class 6</option>
+                                <option value="7">Young Genius Grade 7</option>
+                                <option value="57">Young Genius - Combo 5-7</option>
+                                <option value="8">Super Genius Grade 8</option>
+                                <option value="9">Super Genius Grade 9</option>
+                                <option value="10">Super Genius Grade 10</option>
+                                <option value="810">Super Genius Grade -  Combo 8-10</option>
+                                <option value="12">Super Genius Grade 12 (PCBE)</option>
+                                </select>
+
+                            </div>
+                        </div>
+                        <div  class="form-group">
+                            <div class="input-group mb-3">
+                               
+                                <select class="form-control" id="downpayment">
+                                <option value=" ">--Select Downpayment--</option>
+                                <option value="15">15%</option>
+                                <option value="2">20%</option>
+                                <option value="25">25%</option>
+                                <option value="3">30%</option>
+                                <option value="35">35%</option>
+                               </select>
+
+                            </div>
+                        </div>                        
+                       
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                
+                                <select class="form-control" id="years">
+                                <option value=" ">--Select Loan Period--</option>
+                                <option value="3">3</option>
+                                <option value="6">6</option>
+                                <option value="12">12</option>
+                                
+                                
+                               </select>
+
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-dark btn-block" data-toggle="modal" data-target="#myModal" value="Calculate">
+                        </div>
+                    </form>
+                    <!-- LOADING HERE -->
+                   
+                    <!-- RESULTS HERE -->
+                  <div class="container">
+  
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+         
+         <div id="loading"><img src="loading.gif" alt="loading"></div>
+                    <div id="results" class="pt-4">
+                      
+                       
+                      <div>     
+                             <div class="form-group">
+                                    <div class="input-group mb-3">
+                                <label class="form-control" >GST (18%+1%): <strong>₹ <span id="GST"></span></strong></label>
+                           
+                                        </div>
+                            </div>
+                         
+                          
+                           
+                           
+                            
+                            <div class="form-group">
+                                    <div class="input-group mb-3">
+                            
+                            <label  class="form-control">Processing Fee(2%): <strong>₹ <span id="pf"></span></strong></label>
+                            
+                                        </div>
+                            </div>
+                            <div class="form-group">
+                                    <div class="input-group mb-3">
+                            <label class="form-control">Down Payment: <strong>₹ <span id="uc"></span></strong></label>
+                                        </div>
+                            </div>
+                            <div class="form-group">
+                                    <div class="input-group mb-3">
+                                <label class="form-control" >Loan Amount: <strong>₹ <span id="la"></span></strong></label>
+                            
+                                        </div>
+                            </div>
+                             <div class="form-group">
+                                <div class="input-group mb-3">
+                                    
+                                <label class="form-control">EMI: <strong>₹ <span id="monthly-payment"></span></strong> </label>
+                                    
+                                   
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                    <div class="input-group mb-3">
+                                            
+                                              <label class="form-control">Total Interest: <strong>₹ <span id="total-interest"></span></strong></label>
+                                            </div>
+                                            
+                                        </div>
+                            </div>
+                            </div>
+                    </div>
+                    </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="app.js"></script>
+</body>
+
+</html>
